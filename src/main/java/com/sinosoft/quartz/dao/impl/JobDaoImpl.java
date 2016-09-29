@@ -23,7 +23,6 @@ public class JobDaoImpl implements JobDao {
 	private Logger log = Logger.getLogger(JobDaoImpl.class);
 	private BaseDao baseDao = new BaseDaoImpl();
 
-	@Override
 	public ResultSet getList() {
 		log.info("查询数据库中的数据");
 		ResultSet resultSet = null;
@@ -43,7 +42,6 @@ public class JobDaoImpl implements JobDao {
 		return resultSet;
 	}
 
-	@Override
 	public int add(JobDto job) {
 		int l = 0;
 		try {
@@ -67,7 +65,7 @@ public class JobDaoImpl implements JobDao {
 		return l;
 	}
 
-	@Override
+	
 	public int remove(JobDto job) {
 		int i = 0;
 		try {
@@ -84,7 +82,7 @@ public class JobDaoImpl implements JobDao {
 		return i;
 	}
 
-	@Override
+	
 	public int modify(JobDto job, boolean isAll) {
 		int i = 0;
 		String sql = " update job_quartz set ";

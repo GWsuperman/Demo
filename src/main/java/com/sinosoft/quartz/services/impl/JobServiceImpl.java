@@ -74,7 +74,6 @@ public class JobServiceImpl implements JobService {
 	/**
 	 * 将任务添加到运行的调度器中,并且向数据库中插入一条数据
 	 */
-	@Override
 	public boolean addJob(JobDto dto) {
 		log.debug("添加job Service.");
 		try {
@@ -96,7 +95,6 @@ public class JobServiceImpl implements JobService {
 		return true;
 	}
 
-	@Override
 	public boolean removeJob(JobDto dto) {
 		log.debug("删除任务 service .");
 		if (jobManager.stopJob(JobKey.jobKey(dto.getJob_name(),
@@ -110,7 +108,6 @@ public class JobServiceImpl implements JobService {
 		return false;
 	}
 
-	@Override
 	public boolean pauseJob(JobDto dto) {
 		log.debug("暂停一个任务 service .");
 		if (jobManager.pauseJob(JobKey.jobKey(dto.getJob_name(),
@@ -125,7 +122,6 @@ public class JobServiceImpl implements JobService {
 		return false;
 	}
 
-	@Override
 	public boolean resumeJob(JobDto dto) {
 		log.debug("重启一个任务 service .");
 		if (jobManager.resumeJob(JobKey.jobKey(dto.getJob_name(),
@@ -140,7 +136,6 @@ public class JobServiceImpl implements JobService {
 		return false;
 	}
 
-	@Override
 	public boolean pauseJobs() {
 		log.debug("暂停所有任务 service .");
 		if (jobManager.pauseJobs()) {
@@ -154,7 +149,6 @@ public class JobServiceImpl implements JobService {
 		return false;
 	}
 
-	@Override
 	public boolean resumeJobs() {
 		log.debug("重启所有任务  service .");
 		if (jobManager.resumeJobs()) {

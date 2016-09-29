@@ -20,7 +20,6 @@ public class JobTest implements Job {
 	
 	private Logger log=Logger.getLogger(JobTest.class);
 
-	@Override
 	public void execute(JobExecutionContext jec) throws JobExecutionException {
 		log.debug("任务成功运行");
 		JobDto detailInfo = (JobDto) jec.getMergedJobDataMap().get("scheduleJob");
